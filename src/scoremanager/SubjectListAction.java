@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.School;
 import bean.Subject;
-import dao.SubjectDao;
+import dao.SubjectDAO;
 
 public class SubjectListAction {
-    private SubjectDao subjectDao = new SubjectDao();
+    private SubjectDAO subjectDao = new SubjectDAO();
 
     public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         // ※ 実際はログイン中の先生の school を取得するのが理想
@@ -22,7 +22,7 @@ public class SubjectListAction {
         school.setCd("S001");
 
         // 科目一覧を取得
-        List<Subject> subjects = subjectDao.filter(school);
+        List<Subject> subjects = subjectDAO.filter(school);
 
         // JSP に渡す
         req.setAttribute("subjects", subjects);

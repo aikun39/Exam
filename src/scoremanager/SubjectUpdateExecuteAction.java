@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.School;
 import bean.Subject;
-import dao.SubjectDao;
+import dao.SubjectDAO;
 
 public class SubjectUpdateExecuteAction {
-    private SubjectDao subjectDao = new SubjectDao();
+    private SubjectDAO subjectDao = new SubjectDAO();
 
     public void execute(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String cd = req.getParameter("cd");
@@ -25,7 +25,7 @@ public class SubjectUpdateExecuteAction {
         subject.setName(name);
         subject.setSchool(school);
 
-        boolean success = subjectDao.save(subject);
+        boolean success = subjectDAO.save(subject);
 
         if (success) {
             res.getWriter().println("Subject saved successfully.");
