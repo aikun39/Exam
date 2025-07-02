@@ -1,65 +1,45 @@
-
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.util.List" %>
-<%@ page import="bean.Subject" %>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>科目一覧</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 60%;
-            margin: 20px auto;
-        }
-
-        th, td {
-            border: 1px solid #999;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        h2 {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h2>科目一覧</h2>
-
-    <table>
-        <tr>
-            <th>科目コード</th>
-            <th>科目名</th>
-            <th>学校コード</th>
-        </tr>
-
-        <%
-            List<Subject> subjects = (List<Subject>) request.getAttribute("subjects");
-            if (subjects != null && !subjects.isEmpty()) {
-                for (Subject subject : subjects) {
-        %>
-            <tr>
-                <td><%= subject.getCd() %></td>
-                <td><%= subject.getName() %></td>
-                <td><%= subject.getSchool().getCd() %></td>
-            </tr>
-        <%
-                }
-            } else {
-        %>
-            <tr>
-                <td colspan="3">科目が登録されていません。</td>
-            </tr>
-        <%
-            }
-        %>
-    </table>
-</body>
-</html>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<link rel="stylesheet" href="../css/subjectlist.css">
+<c:import url="base.jsp">
+    <c:param name="title">科目一覧</c:param>
+    <c:param name="scripts"></c:param>
+    <c:param name="content">
+        <section>
+            <h2>科目管理</h2>
+            <div class="register-link">
+                <a href="SubjectCreate.action">新規登録</a>
+            </div>
+            <c:choose>
+                <c:when test="${ not empty subjects }">
+                    <div>検索結果 : ${ fn:length(subjects) }件</div>
+                    <table class="table">
+                        <tr>
+                            <th>科目コード</th>
+                            <th>科目名</th>
+                            <th>学校コード</th>
+                            <th></th>
+                        </tr>
+                        <c:forEach var="subject" items="${ subjects }">
+                            <tr>
+                                <td>${ subject.cd }</td>
+                                <td>${ subject.name }</td>
+                                <td>${ subject.school.cd }</td>
+                                <td>
+                                    <a href="SubjectUpdate.action?cd=${ subject.cd }">変更</a>
+                                </td>
+                                <td>
+                                    <a href="SubjectDelete.action?cd=${ subject.cd }">削除</a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </c:when>
+                <c:otherwise>
+                    <div>科目が登録されていません。</div>
+                </c:otherwise>
+            </c:choose>
+        </section>
+    </c:param>
+</c:import>

@@ -10,7 +10,7 @@ import bean.Subject;
 import dao.SubjectDAO;
 
 public class SubjectUpdateExecuteAction {
-    private SubjectDAO subjectDao = new SubjectDAO();
+    private SubjectDAO subjectDAO = new SubjectDAO();
 
     public void execute(HttpServletRequest req, HttpServletResponse res) throws IOException {
         String cd = req.getParameter("cd");
