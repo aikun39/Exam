@@ -15,7 +15,7 @@
 
     <p>以下の科目を削除してもよろしいですか？</p>
 
-    <form action="subject_delete_complete" method="post">
+    <form action="SubjectDeleteExecute.action" method="post">
         <!-- 表示項目 -->
         <p>科目コード：${subject.subject_cd}</p>
         <p>科目名　　：${subject.subject_name}</p>
