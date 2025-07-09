@@ -1,44 +1,86 @@
-/* ===== ログアウトページ ===== */
-.logout-section {
-  width: 85%;
-  max-width: 600px;
-  margin: 40px auto 0 auto;
+/* ① 見出し（学生情報登録） */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #222;
+  letter-spacing: 0.06em;
+  margin: 0 0 12px 0;
+  padding: 8px 20px;
   background: #f6f6f6;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 24px 32px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  font-family: "Meiryo", "メイリオ", sans-serif;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.logout-message {
+/* ② 完了メッセージ */
+.complete-message {
   background: #a3d6b1;
   color: #225d2a;
-  padding: 14px 20px;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 0.04em;
-}
-
-.logout-login-link {
-  text-align: center;
-}
-
-.logout-login-link a {
-  color: #2c57a0;
   font-size: 1rem;
-  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 0 0 3px 3px;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+/* ③ 戻るリンク */
+.back-link {
+  color: #0066cc;
   text-decoration: underline;
-  transition: color 0.14s;
+  margin-right: 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.back-link:hover {
+  color: #003366;
 }
 
-.logout-login-link a:hover {
-  color: #174282;
+/* ④ 学生一覧リンク */
+.list-link {
+  color: #0066cc;
+  text-decoration: underline;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.list-link:hover {
+  color: #003366;
 }
 
+/* レイアウト調整例（中央揃えや余白） */
+.content-area {
+  margin-left: 180px; /* サイドメニュー分 */
+  margin-top: 20px;
+  min-width: 580px;
+}
+
+/* サイドメニュー例（参考） */
+.side-menu {
+  position: absolute;
+  left: 0;
+  top: 84px;
+  width: 140px;
+  padding-left: 24px;
+  font-size: 1rem;
+}
+.side-menu a {
+  color: #0066cc;
+  text-decoration: underline;
+  display: block;
+  margin: 8px 0;
+}
+.side-menu a.selected {
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 全体共通 */
+body {
+  background: #fff;
+  font-family: "Meiryo", "メイリオ", sans-serif;
+  margin: 0;
+}
 
 /* ===== サイドバー・ヘッダー共通装飾（base.jsp用） ===== */
 .header-bar {

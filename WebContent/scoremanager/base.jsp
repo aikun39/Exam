@@ -1,11 +1,10 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
+<%@include file="../header.html" %>
     <meta charset="UTF-8">
     <title><c:out value="${param.title}" /></title>
-    <link rel="stylesheet" href="../css/menu.css">
+    <c:if test="${empty param.nobasecss}">
+	</c:if>
     <c:if test="${not empty param.scripts}">
       ${param.scripts}
     </c:if>
@@ -26,8 +25,15 @@
         <nav class="menu-side">
             <a href="menu.jsp">メニュー</a>
             <a href="StudentList.action">学生管理</a>
+
+            <a href="TestRegist.action">成績管理</a>
+            <div style="padding-left: 20px;">
             <a href="TestRegist.action">成績登録</a>
+            </div>
+            <div style="padding-left: 20px;">
             <a href="TestList.action">成績参照</a>
+            </div>
+
             <a href="SubjectList.action">科目管理</a>
         </nav>
         <!-- 各ページごとの内容（contentパラメータ） -->
