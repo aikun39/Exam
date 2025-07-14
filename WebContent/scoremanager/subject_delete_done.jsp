@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>科目削除完了</title>
-    <link rel="stylesheet" href="../css/subject.css">
+    <link rel="stylesheet" href="../css/sub_delete_done.css">
 </head>
 <body>
     <h1>科目削除完了</h1>

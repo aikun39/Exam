@@ -1,0 +1,37 @@
+/* ===== 科目削除完了ページ用 sub_delete_done.css ===== */
+
+/* ===== セクション全体 ===== */
+section,
+.form-container {
+  background: #f9fbff;
+  border: 1px solid #99bbdd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(50, 100, 150, 0.08);
+  padding: 20px 24px 28px 24px;
+  margin: 18px auto 0 auto;
+  width: 480px;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ===== タイトル ===== */
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: #e6f0ff;
+  color: #1a3c70;
+  text-align: left;
+  padding: 12px 30px;
+  margin: -20px -24px 18px -24px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #99bbdd;
+  letter-spacing: 1px;
+}
+
+/* ===== 完了メッセージ（緑で装飾） ===== */
+.complete-message {
+  font-size: 1.05em;
+  color: #1b5e20; /* テキスト色：濃い緑 */
+  background: #e8f5e9; /* 背景色：淡い緑 */
+  border: 2px solid #66bb6a; /* 枠線：明*

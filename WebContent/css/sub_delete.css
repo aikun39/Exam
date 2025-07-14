@@ -1,0 +1,35 @@
+/* ===== 科目削除ページ用 sub_delete.css ===== */
+
+/* ===== セクション全体 ===== */
+section,
+form,
+.form-container {
+  background: #f9fbff;
+  border: 1px solid #99bbdd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(50, 100, 150, 0.08);
+  padding: 20px 24px 28px 24px;
+  margin: 18px auto 0 auto;
+  width: 480px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== タイトル ===== */
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: #e6f0ff;
+  color: #1a3c70;
+  text-align: left;
+  padding: 12px 30px;
+  margin: -20px -24px 18px -24px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #99bbdd;
+  letter-spacing: 1px;
+}
+
+/* ===== 確認メッセージ ===== */
+.confirm-message {
+  font-size: 1em;
+  margin-bottom: 18px;
