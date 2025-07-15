@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>科目削除完了</h1>
-    <div>科目が正常に削除されました。</div>
+    <div class="message">科目が正常に削除されました。</div>
     <div>
         <a href="SubjectList.action">一覧へ戻る</a>
     </div>
