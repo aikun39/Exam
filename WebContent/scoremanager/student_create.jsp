@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link rel="stylesheet" href="../css/stu_create.css">
+
 <c:import url="base.jsp">
   <c:param name="title">学生新規登録</c:param>
   <c:param name="scripts"></c:param>
   <c:param name="content">
-    <link rel="stylesheet" href="../css/stu_create.css">
     <section>
       <h2>学生新規登録</h2>
       <c:if test="${not empty error}">
@@ -23,9 +24,15 @@
             </td>
           </tr>
           <tr>
-            <th>学生番号</th>
-            <td><input type="text" name="no" value="${param.no}" required placeholder="学生番号を入力してください"></td>
-          </tr>
+		  <th>学生番号</th>
+		  <td>
+		    <input type="text" name="no" value="${param.no}" required placeholder="学生番号を入力してください">
+		    <c:if test="${not empty error_no}">
+		      <div class="small-warning">${error_no}</div>
+		    </c:if>
+		  </td>
+		</tr>
+
           <tr>
             <th>氏名</th>
             <td><input type="text" name="name" value="${param.name}" required placeholder="氏名を入力してください"></td>
@@ -38,6 +45,13 @@
                   <option value="${classNum}" <c:if test="${param.class_num == classNum}">selected</c:if>>${classNum}</option>
                 </c:forEach>
               </select>
+            </td>
+          </tr>
+          <tr>
+            <th>在学中</th>
+            <td>
+              <input type="checkbox" name="is_attend" value="true"
+                <c:if test="${param.is_attend == 'true'}">checked</c:if>> 在学中
             </td>
           </tr>
         </table>

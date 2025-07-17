@@ -8,7 +8,7 @@
     <c:param name="content">
         <section>
             <h2>科目情報削除</h2>
-            <p>以下の科目情報を削除します。よろしいですか？</p>
+            <p>以下の科目情報を削除すると、成績情報も一緒に削除されますが、よろしいですか？</p>
             <div>
                 <label>科目コード：</label>
                 <span>${subject.cd}</span>
